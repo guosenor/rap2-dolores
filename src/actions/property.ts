@@ -29,7 +29,9 @@ export const updatePropertyFailed = (message: any) => ({
 export const updateProperties = (itf: any, properties: any, summary: any, onResolved: any) => ({
   type: 'PROPERTIES_UPDATE',
   itf,
-  properties,
+  properties: properties.map((item: any) => {
+    return {...item, type: item.type==='Null' ? 'String': item.type}
+  }),
   summary,
   onResolved,
 })
