@@ -30,7 +30,7 @@ export const updateProperties = (itf: any, properties: any, summary: any, onReso
   type: 'PROPERTIES_UPDATE',
   itf,
   properties: properties.map((item: any) => {
-    return {...item, type: item.type==='Null' ? 'String': item.type}
+    return {...item, type: item.type === 'Null' ? 'String' : item.type}
   }),
   summary,
   onResolved,
